@@ -1,12 +1,39 @@
+// import React from "react";
+// import Test from "./About_me/Test";
+// import "./App.css";
+
+// function App() {
+//   return (
+//     <div className="Font">
+//       <p className="text-center text-blue-400 text-7xl">HEj</p>
+//       <Test />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import React from "react";
-import Test from "./About_me/Test";
+import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   return (
-    <div className="Font">
-      <p className="text-center text-blue-400 text-7xl">HEj</p>
-      <Test />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload dkljsoikskoi.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
