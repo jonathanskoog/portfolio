@@ -1,0 +1,61 @@
+.animate__animated.animate__fadeIn {
+    --animate-duration: 5s;
+  }
+
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+  
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Adjust this value to change the space between the buttons */
+  }
+
+
+  .icon-button {
+    position: relative;
+    display: inline-block;
+    /* margin-left: 50%; */
+  }
+  
+  .icon-button.underline::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    margin-top: 110%;
+    width: 100%;
+    background-color: #1d1d1f;
+    opacity: 0;
+  }
+  
+  .icon-button.underline:hover::after {
+    animation: fadeIn 2s;
+    opacity: 1;
+  }
+
+
+  .box {
+    width: 7rem;
+    height: 1.7rem;
+    margin-left: 0.5rem;
+    border-radius: 50px;
+    background-color: #0071E3;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
