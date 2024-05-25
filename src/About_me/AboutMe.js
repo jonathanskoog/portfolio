@@ -19,112 +19,141 @@ import React, { useState } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
+import { Toaster, toast } from "sonner";
+
+import { Divider } from "@nextui-org/divider";
+
+import Navbar from "./components/Navbar.js";
+
 function AboutMe() {
   const [hover, setHover] = useState(false);
   const [hover2, setHover2] = useState(false);
 
   return (
-    <div>
-      <p
-        style={{
-          fontFamily:
-            "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
-          fontWeight: 600,
-          color: "#1d1d1f",
-          fontSize: "3rem",
-          lineHeight: "60px",
-          textAlign: "center",
-        }}
-        // className="text-center"
-      >
-        Jonathan Skoog
-        <br />
-        <p
-          style={{
-            fontFamily:
-              "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
-            fontWeight: 600,
-            color: "#6e6e73",
-            lineHeight: "29px",
-            fontSize: "1.5rem",
-          }}
-        >
-          I'm a Software Developer
-        </p>
-      </p>
-
-      <div className="icon-container">
-        <div
-          className={`icon-button ${hover ? "underline " : ""}`}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
-          <IconButton
-            size="large"
-            aria-label="linkedinicon"
-            color="primary"
-            onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/jonathan-skoog-763599276",
-                "_blank"
-              );
-            }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-        </div>
-
-        <div
-          className={`text-center icon-button ${hover2 ? "underline" : ""}`}
-          onMouseEnter={() => setHover2(true)}
-          onMouseLeave={() => setHover2(false)}
-        >
-          <IconButton
-            size="large"
-            aria-label="githubicon"
-            color="inherit"
-            onClick={() => {
-              window.open("https://github.com/jonathanskoog", "_blank");
-            }}
-          >
-            <GitHubIcon /> {/* Use the new icon */}
-          </IconButton>
-        </div>
-
-        {/* <span className="sm:ml-3">
-          <button
-            type="button"
-            className="inline-flex mt-2 ml-1 items-center rounded-md bg-custom-blue px-5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            <EnvelopeIcon
-              className="-ml-0.5 mr-1.5 h-5 w-5 text-white"
-              aria-hidden="true"
-            />
-            Publish
-          </button>
-        </span> */}
-
-        <motion.div
-          className="box"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 500, damping: 18 }}
-          style={{ marginTop: "0.7rem" }}
-        >
-          <EnvelopeIcon
-            className="-ml-0.5 mr-1.5 h-4 w-4 text-white"
-            aria-hidden="true"
-          />
+    <div className="aboutmediv center">
+      <Navbar />
+      <div className="center">
+        <div>
           <p
             style={{
               fontFamily:
                 "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
-              fontWeight: 400,
+              fontWeight: 600,
+              color: "#1d1d1f",
+              // fontSize: "6rem",
+              // lineHeight: "84px",
+              textAlign: "center",
             }}
+            className="mobile-name"
           >
-            Contact
+            Jonathan Skoog
+            <br />
           </p>
-        </motion.div>
+          <p
+            style={{
+              fontFamily:
+                "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
+              fontWeight: 600,
+              color: "#6e6e73",
+              // lineHeight: "29px",
+              // fontSize: "2.5rem",
+              marginTop: "1rem",
+              marginBottom: "1.5rem",
+              textAlign: "center",
+            }}
+            className="mobile-deschribtion"
+          >
+            I'm a Software Developer
+          </p>
+        </div>
+
+        <div className="icon-container">
+          <div
+            className={`icon-button ${hover ? "underline " : ""}`}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <IconButton
+              // style={{ width: "4rem", height: "4rem" }}
+
+              className="icon-mobile"
+              size="large"
+              aria-label="linkedinicon"
+              color="primary"
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/jonathan-skoog-763599276",
+                  "_blank"
+                );
+              }}
+            >
+              <LinkedInIcon style={{ width: "100%", height: "100%" }} />
+            </IconButton>
+          </div>
+
+          <Divider orientation="vertical" className="divide-mobile" />
+
+          <div
+            className={`text-center icon-button ${hover2 ? "underline" : ""}`}
+            onMouseEnter={() => setHover2(true)}
+            onMouseLeave={() => setHover2(false)}
+          >
+            <IconButton
+              // style={{ width: "4rem", height: "4rem" }}
+              className="icon-mobile"
+              size="large"
+              aria-label="githubicon"
+              color="inherit"
+              onClick={() => {
+                window.open("https://github.com/jonathanskoog", "_blank");
+              }}
+            >
+              <GitHubIcon style={{ width: "100%", height: "100%" }} />
+            </IconButton>
+          </div>
+
+          <Divider
+            orientation="vertical"
+            className="divide-mobile divide-mobile-right"
+          />
+
+          <motion.div
+            layout
+            className="box"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 500, damping: 18 }}
+            onClick={() =>
+              toast.success("Email was copied to clipboard") &&
+              navigator.clipboard.writeText("jonathan.c.skoog@gmail.com")
+            }
+          >
+            <EnvelopeIcon
+              className="-ml-0.5 mr-1.5 text-white email-icon"
+              aria-hidden="true"
+            />
+            <p
+              style={{
+                fontFamily:
+                  "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 400,
+              }}
+              className="email-btn-text"
+            >
+              Email
+            </p>
+          </motion.div>
+        </div>
+
+        <Toaster richColors />
+
+        {/* Lägg till onclick till nästa section*/}
+        <div id="scroll-down-animation">
+          <span class="mouse">
+            <span class="move"></span>
+          </span>
+          {/* <p class="scrolldown">Scroll down</p> */}
+        </div>
       </div>
     </div>
   );

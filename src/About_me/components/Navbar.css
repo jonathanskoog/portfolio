@@ -1,0 +1,27 @@
+.nav-text{
+    font-family: "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif";
+    font-weight: 600;
+    color: #1d1d1f;
+    line-height: 29px;
+
+}
+
+.logo{
+    margin-top: 0.2rem;
+}
+
+.hover-cursor {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;	
+    align-items: center;
+    flex-direction: row;
+  }
+
+ 
+
+@media (max-width: 600px) {
+    .mobile-logo{
+        margin-left: calc(200% - 70px);
+    }
+}
