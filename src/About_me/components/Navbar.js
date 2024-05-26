@@ -44,7 +44,7 @@ function Navbars() {
       onMenuOpenChange={setIsMenuOpen}
       isBordered
       isBlurred={true}
-      shouldHideOnScroll
+      shouldHideOnScroll={false}
       // style={{ backgroundColor: "#F5F5F7" }}
       maxWidth={"full"}
     >
@@ -72,19 +72,34 @@ function Navbars() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+        <NavbarItem isActive style={{ cursor: "pointer" }}>
+          <Link
+            color={"foreground"}
+            underline="hover"
+            // aria-current="page"
+            onPress={
+              () =>
+                document
+                  .getElementsByClassName("center")[0]
+                  .scrollIntoView({ behavior: "smooth" }) // Scroll to the top of the page
+            }
+          >
+            Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+        <NavbarItem style={{ cursor: "pointer" }}>
+          {/* fixa så kan klicka o ändra färg med isactive */}
+          <Link color="foreground" underline="hover">
+            About
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+        <NavbarItem style={{ cursor: "pointer" }}>
+          <Link
+            color="foreground"
+            // href="#"
+            underline="hover"
+          >
+            Projects
           </Link>
         </NavbarItem>
       </NavbarContent>
