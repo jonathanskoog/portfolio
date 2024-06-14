@@ -26,25 +26,16 @@ import "@fontsource/inter/900.css";
 function Navbars() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  //lägg till check för om mobile då göm nav annars inte
+
+  const menuItems = ["Home", "About", "Projects"];
 
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isBordered
       isBlurred={true}
-      shouldHideOnScroll={false}
+      shouldHideOnScroll
       // style={{ backgroundColor: "#F5F5F7" }}
       maxWidth={"full"}
     >
@@ -55,12 +46,12 @@ function Navbars() {
         />
         <NavbarBrand className="mobile-logo">
           <div
-            onClick={
-              () =>
-                document
-                  .getElementsByClassName("center")[0]
-                  .scrollIntoView({ behavior: "smooth" }) // Scroll to the top of the page
-            }
+            onClick={() => {
+              // console.log("NavbarBrand clicked");
+              document
+                .getElementsByClassName("center")[0]
+                .scrollIntoView({ behavior: "smooth" }); // Scroll to the top of the page
+            }}
             className="hover-cursor"
           >
             <div className="logo">
@@ -115,18 +106,38 @@ function Navbars() {
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem
+            key={`${item}-${index}`}
+            style={{ marginBottom: "0.5rem" }}
+          >
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
+              color="foreground"
+              underline="hover"
               className="w-full"
               href="#"
               size="lg"
+              style={{
+                fontFamily:
+                  "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 600,
+                color: "#1d1d1f",
+                lineHeight: "2rem",
+                fontSize: "1.75rem",
+              }}
+              onPress={
+                () =>
+                  document
+                    .getElementsByClassName(
+                      index === 0
+                        ? "center"
+                        : index === 1
+                        ? ""
+                        : index === 2
+                        ? ""
+                        : "center"
+                    )[0]
+                    .scrollIntoView({ behavior: "smooth" }) // Scroll to the top of the page, ändra till att scrolla till rätt sektion
+              }
             >
               {item}
             </Link>

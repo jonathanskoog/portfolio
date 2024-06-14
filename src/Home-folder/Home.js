@@ -13,7 +13,7 @@ import GitHubIcon from "@mui/icons-material/GitHub"; // Import the new icon
 
 import IconButton from "@mui/material/IconButton";
 import "animate.css";
-import "./AboutMe.css";
+import "./Home.css";
 import React, { useState } from "react";
 
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
@@ -25,7 +25,7 @@ import { Divider } from "@nextui-org/divider";
 
 import Navbar from "./components/Navbar.js";
 
-function AboutMe() {
+function Home() {
   const [hover, setHover] = useState(false);
   const [hover2, setHover2] = useState(false);
 
@@ -57,13 +57,13 @@ function AboutMe() {
               color: "#6e6e73",
               // lineHeight: "29px",
               // fontSize: "2.5rem",
-              marginTop: "1rem",
+              marginTop: "1.5rem",
               marginBottom: "1.5rem",
               textAlign: "center",
             }}
             className="mobile-deschribtion"
           >
-            I'm a Software Developer
+            I'm a Software Developer, based in Sweden.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ function AboutMe() {
           </motion.div>
         </div>
 
-        <Toaster richColors />
+        <Toaster richColors closeButton invert={true} />
 
         {/* Lägg till onclick till nästa section*/}
         <div id="scroll-down-animation">
@@ -159,4 +159,4 @@ function AboutMe() {
   );
 }
 
-export default AboutMe;
+export default Home;

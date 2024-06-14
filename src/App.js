@@ -15,7 +15,7 @@
 
 import React from "react";
 import "./App.css";
-import AboutMe from "./About_me/AboutMe";
+import Home from "./Home-folder/Home";
 
 import { NextUIProvider } from "@nextui-org/react";
 
@@ -29,11 +29,11 @@ function App() {
         style={{
           fontFamily:
             "SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
-            fontWeight: 600,
+          fontWeight: 600,
         }}
       >
         <div className="full-screen-div">
-          <AboutMe />
+          <Home />
         </div>
       </NextUIProvider>
     </div>
