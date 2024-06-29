@@ -25,9 +25,23 @@ import { Divider } from "@nextui-org/divider";
 
 import Navbar from "./components/Navbar.js";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
 function Home() {
   const [hover, setHover] = useState(false);
   const [hover2, setHover2] = useState(false);
+
+  useGSAP(() => {
+    gsap.from(".mobile-name, .mobile-deschribtion", { opacity: 0, delay: 1 });
+    gsap.from(".icon-container", {
+      opacity: 0,
+      delay: 1.5,
+      y: 50,
+    });
+  }, []);
 
   return (
     <div className="aboutmediv center">
@@ -147,8 +161,14 @@ function Home() {
 
         <Toaster richColors closeButton invert={true} />
 
-        {/* Lägg till onclick till nästa section*/}
-        <div id="scroll-down-animation">
+        <div
+          id="scroll-down-animation"
+          onClick={() => {
+            document
+              .getElementsByClassName("header")[0]
+              .scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <span class="mouse">
             <span class="move"></span>
           </span>

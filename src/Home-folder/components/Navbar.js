@@ -72,7 +72,7 @@ function Navbars() {
               () =>
                 document
                   .getElementsByClassName("center")[0]
-                  .scrollIntoView({ behavior: "smooth" }) // Scroll to the top of the page
+                  .scrollIntoView({ behavior: "smooth" }) 
             }
           >
             Home
@@ -80,7 +80,15 @@ function Navbars() {
         </NavbarItem>
         <NavbarItem style={{ cursor: "pointer" }}>
           {/* fixa så kan klicka o ändra färg med isactive */}
-          <Link color="foreground" underline="hover">
+          <Link
+            color="foreground"
+            underline="hover"
+            onClick={() => {
+              document
+                .getElementsByClassName("header")[0]
+                .scrollIntoView({ behavior: "smooth" }); 
+            }}
+          >
             About
           </Link>
         </NavbarItem>

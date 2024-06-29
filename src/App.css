@@ -51,3 +51,16 @@ background-size: cover; */
   /* border: 20px solid #000; */
   
 }
+
+
+.full-screen-div-no-center {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  /* border: 20px solid #000; */
+ background-color: #d6d6d8;
+  border-radius: 3rem;
+  /* margin: auto; */
+
+  
+}

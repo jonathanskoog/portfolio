@@ -16,6 +16,7 @@
 import React from "react";
 import "./App.css";
 import Home from "./Home-folder/Home";
+import About from "./About-folder/About";
 
 import { NextUIProvider } from "@nextui-org/react";
 
@@ -34,6 +35,9 @@ function App() {
       >
         <div className="full-screen-div">
           <Home />
+        </div>
+        <div className="full-screen-div-no-center">
+          <About />
         </div>
       </NextUIProvider>
     </div>

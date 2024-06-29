@@ -1,0 +1,83 @@
+* {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.header {
+    margin-left: 10.5rem;
+    color: #1d1d1f;
+    font-size: 5rem;
+    margin-bottom: -1rem;
+}
+
+.divider {
+    width: 93%;
+    margin-left: 3rem;
+}
+
+.text {
+    color: #6e6e73;
+    font-size: 1.3rem;
+    text-align: left;
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.textbox {
+    margin-left: calc(70% - 26rem);
+    /* margin-top: 2rem; */
+   margin-top: -22rem;
+
+}   
+
+
+.btnbox {
+    width: 10rem;
+    height: 3rem;
+    /* margin-left: 0.5rem; */
+    border-radius: 50px;
+    background-color: #0071E3;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0rem;
+    margin-top: 2rem;
+  }
+
+
+
+  .cv-icon{
+    width: 1.4rem;
+    height: 1.4rem;
+ }
+
+ 
+
+
+ .cv-btn-text{
+    font-size: 1.4rem;
+    line-height: 20px;
+ }
+
+
+ .image {
+    /* width: 20rem ;
+    height: 22rem ; */
+    margin-left: 10rem;
+    margin-top: 5rem;
+ }
+
+ .boxrow { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: #0071E3 2px solid;
+ }
+ 
